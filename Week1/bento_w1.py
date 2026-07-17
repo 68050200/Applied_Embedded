@@ -34,9 +34,11 @@ for round_no in range(1, 3):
     print("ท่า 1: กะพริบช้า 1 Hz")
     for i in range(10):
         # เติม: สั่งให้ LED ติด ด้วย led.on()
+        led.on()
         pass
         time.sleep_ms(500)
         # เติม: สั่งให้ LED ดับ ด้วย led.off()
+        led.off()
         pass
         time.sleep_ms(500)
 
@@ -47,6 +49,7 @@ for round_no in range(1, 3):
     print("ท่า 2: กะพริบเร็ว 5 Hz")
     for i in range(25):
         # เติม: สลับสถานะ LED ด้วย led.toggle()  (ติด<->ดับ)
+        led.toggle()
         pass
         time.sleep_ms(100)
     led.off()
@@ -63,6 +66,7 @@ for round_no in range(1, 3):
             led.off()
             time.sleep_ms(120)
         # เติม: พักยาวหนึ่งช่วง ด้วย time.sleep_ms(700)
+        time.sleep_ms(700)
         pass
 
     # --- ท่าที่ 4: รหัส SOS แบบมอร์ส (2 เที่ยว ~ 12 วินาที) ---
@@ -75,6 +79,7 @@ for round_no in range(1, 3):
         for length_ms in (150, 150, 150, 500, 500, 500, 150, 150, 150):
             led.on()
             # เติม: หน่วงเวลาตามค่า length_ms ด้วย time.sleep_ms(length_ms)
+            time.sleep_ms(length_ms)
             pass
             led.off()
             time.sleep_ms(200)
@@ -88,6 +93,7 @@ for round_no in range(1, 3):
         # ไปข้างหน้า: 0, 1, 2, ...
         for i in range(n):
             # เติม: เปิด LED ดวงที่ i ด้วย gpio.led(i).on()
+            gpio.led(i).on()
             pass
             time.sleep_ms(120)
             gpio.led(i).off()
@@ -96,6 +102,7 @@ for round_no in range(1, 3):
             gpio.led(i).on()
             time.sleep_ms(120)
             # เติม: ปิด LED ดวงที่ i ด้วย gpio.led(i).off()
+            gpio.led(i).off()
             pass
 
 # จบการแสดง เคลียร์ไฟให้ดับหมดทุกดวง
