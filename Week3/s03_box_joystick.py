@@ -54,7 +54,8 @@ def update():
     speed = BASE_SPEED + hold_frames
     current_speed = min(speed , MAX_SPEED)  #คุมเพดานด้วย MAX_SPEED เลือกตัวน้อยกว่า
     #print(current_speed)
-
+   
+    
     if pressed.left:
         hero.move(-current_speed, 0)
     if pressed.right:
@@ -65,5 +66,6 @@ def update():
         hero.move(0, current_speed)
 
     #วิ่งเฉียง 
+
 
 game.run(update)                    # วิ่งทุกเฟรมจนกว่าจะ return False
